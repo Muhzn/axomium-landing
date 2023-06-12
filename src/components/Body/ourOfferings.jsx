@@ -13,10 +13,10 @@ const OurOfferings = () => {
     return (
         <div className='our-offerings-body'>
             <div className='our-offerings-header'>
-                <div className='our-offerings-title'>
+                <div className='general-title'>
                     OUR OFFERINGS
                 </div>
-                <div className='our-offerings-description'>
+                <div className='general-titile-description'>
                     Revolutionize Your <span style={{ fontWeight: 700 }}>Business</span> with Blockchain
                 </div>
             </div>

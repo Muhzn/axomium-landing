@@ -193,13 +193,13 @@ code {
   background: #F5F5F5;
 }
 
-.our-offerings-title {
+.general-title {
   font-size: 18px;
   color: #CC2D2D;
   letter-spacing: 0.24em;
 }
 
-.our-offerings-description {
+.general-titile-description {
   font-size: 48px;
   line-height: 120%;
   font-weight: 500;
@@ -376,7 +376,77 @@ code {
   margin: .5em 0;
 }
 
+.general-container {
+  padding: 5em 2em;
+}
 
+.general-container-grey {
+  padding: 5em 2em;
+  background: #F5F5F5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.contact-form div {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.contact-form label {
+  margin-right: auto;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.contact-form input {
+  width: 30em;
+  height: 3em;
+  border: 1px solid #D9D9D9;
+  border-radius: 10px;
+}
+
+.contact-form textarea {
+  width: 30em;
+  height: 7em;
+  border: 1px solid #D9D9D9;
+  border-radius: 10px;
+}
+
+input::placeholder {
+  font-family: 'Raleway';
+}
+
+#contactMessage::placeholder {
+  font-family: 'Raleway';
+}
+
+.blog-card {
+  width: 386px;
+  text-align: left;
+}
+
+.blog-image {
+  height: auto;
+  width: -webkit-fill-available;
+}
+
+.blog-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  padding-bottom: 1em
+}
+
+.blog-content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+}
 
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
@@ -425,7 +495,7 @@ code {
     margin: 20px;
   }
 
-  .our-offerings-description {
+  .general-titile-description {
     width: 297px;
     font-size: 32px;
     font-weight: 500;
@@ -451,6 +521,14 @@ code {
 
   .faq-questions-container {
     width: 80%;
+  }
+
+  .contact-form input {
+    width: 20em;
+  }
+
+  .contact-form textarea {
+    width: 20em;
   }
 }
 
