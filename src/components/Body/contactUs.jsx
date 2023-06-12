@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-const ContactUs = () => {
+
+const ContactUs = forwardRef((props, ref) => {
     return (
-        <div className='general-container'>
+        <div className='general-container' ref={ref}>
             <div className='general-title'>CONTACT US</div>
             <div className='general-titile-description'>
                 Let's Start a  <span style={{ fontWeight: 700 }}>Conversation</span> and Bring Your Vision to Life!
@@ -24,5 +25,5 @@ const ContactUs = () => {
             </div>
         </div>
     );
-};
+});
 export default ContactUs;

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import nft4 from '../../assets/images/nft/Bitcoin-P2P-pana 1.png';
 
-const Blogs = () => {
+const Blogs = forwardRef((props, ref) => {
     return (
-        <div className='general-container'>
+        <div className='general-container' ref={ref}>
             <div className='general-title'>BLOGS</div>
             <div className='general-titile-description'>
                 Dive into our <span style={{ fontWeight: 700 }}>Blog</span> for Expert Insights and Analysis
@@ -26,5 +26,5 @@ const Blogs = () => {
             </div>
         </div>
     );
-};
+});
 export default Blogs;

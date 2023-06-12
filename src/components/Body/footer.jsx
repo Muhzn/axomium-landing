@@ -1,19 +1,39 @@
 import React from 'react';
 import logo from '../../assets/images/footer-logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import fb from '../../assets/images/fb.png';
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import instagram from '../../assets/images/instagram.png';
 import twitter from '../../assets/images/twitter.png';
 import linkedin from '../../assets/images/linkedin.png';
 
-
-
-
 library.add(faArrowRight);
 
-const Footer = () => {
+const Footer = ({ targetRef }) => {
+    const handleScroll = (component) => {
+        console.log(component);
+        console.log(targetRef);
+        switch (component) {
+            case 'title':
+                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'description':
+                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'ourOfferings':
+                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'blogs':
+                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'contactUs':
+                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            default:
+                console.log('NoTabSpecified');
+        }
+    };
     return (
         <div className='footer-container'>
             <div className='footer-upper-container'>
@@ -39,10 +59,10 @@ const Footer = () => {
                 <div className='footer-navigation'>
                     <div className='footer-navigation-header'>COMPANY</div>
                     <div className='footer-navigation-list'>
-                        <div>Home</div>
-                        <div>About Us</div>
-                        <div>our Offerings</div>
-                        <div>Blog</div>
+                        <div onClick={() => handleScroll('title')}>Home</div>
+                        <div onClick={() => handleScroll('description')}>About Us</div>
+                        <div onClick={() => handleScroll('ourOfferings')}>our Offerings</div>
+                        <div onClick={() => handleScroll('blogs')}>Blog</div>
                     </div>
                 </div>
             </div>

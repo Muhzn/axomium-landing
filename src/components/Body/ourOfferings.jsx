@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import nft1 from '../../assets/images/nft/NFT-bro.png';
 import nft2 from '../../assets/images/nft/NFT-amico.png';
 import nft3 from '../../assets/images/nft//Bitcoin-rafiki.png';
@@ -8,10 +8,9 @@ import nft6 from '../../assets/images/nft/BitcoinP2P-bro.png';
 import nft7 from '../../assets/images/nft/Hidden mining-amico.png';
 import nft8 from '../../assets/images/nft/Spreadsheets-amico.png';
 
-
-const OurOfferings = () => {
+const OurOfferings = forwardRef((props, ref) => {
     return (
-        <div className='our-offerings-body'>
+        <div className='our-offerings-body' ref={ref}>
             <div className='our-offerings-header'>
                 <div className='general-title'>
                     OUR OFFERINGS
@@ -178,5 +177,5 @@ const OurOfferings = () => {
             </div >
         </div>
     );
-};
+});
 export default OurOfferings;

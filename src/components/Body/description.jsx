@@ -1,20 +1,14 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import backgroundLogo from '../../assets/images/axomium-white-logo.png';
 import backgroundLogoMobile from '../../assets/images/axomium-white-logo-mobile.png';
 import { isMobile } from 'react-device-detect';
 import { useMediaQuery } from 'react-responsive';
 
-
-
-
-
-
-
-const Description = () => {
+const Description = forwardRef((props, ref) => {
     const isTab = useMediaQuery({ minWidth: 601, maxWidth: 1200 });
 
     return (
-        <div className='app-description'>
+        <div className='app-description' ref={ref}>
             {!isMobile ? <img
                 className='background-logo'
                 src={backgroundLogo}
@@ -46,5 +40,5 @@ const Description = () => {
             </div>
         </div>
     );
-};
+});
 export default Description;
