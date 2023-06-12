@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/images/footer-logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fb from '../../assets/images/fb.png';
@@ -11,6 +11,29 @@ import linkedin from '../../assets/images/linkedin.png';
 library.add(faArrowRight);
 
 const Footer = ({ targetRef }) => {
+
+    const [email, setEmail] = useState('');
+
+    const handleInput = (e) => {
+        setEmail(e.target.value);
+    };
+    async function handleSubmit() {
+        console.log({
+            email: email,
+        });
+        await fetch('https://api.axomium.com/v1/newsletter/user', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+            })
+        });
+        setEmail('');
+    };
+
     const handleScroll = (component) => {
         console.log(component);
         console.log(targetRef);
@@ -50,8 +73,9 @@ const Footer = ({ targetRef }) => {
                         SUBSCRIBE TO OUR NEWSLETTER
                     </div>
                     <div className='footer-newsletter-input'>
-                        <input className='subscribe-input' id="newsletter" type="text" placeholder='Enter your email' />
-                        <button className='newsletter-button'>
+                        <input className='subscribe-input' id="newsletter" type="text" placeholder='Enter your email'
+                            onChange={(e) => handleInput(e)} />
+                        <button className='newsletter-button' onClick={handleSubmit}>
                             <FontAwesomeIcon icon="arrow-right" />
                         </button>
                     </div>

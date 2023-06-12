@@ -1,7 +1,49 @@
-import React, { forwardRef } from 'react';
+import React, { useState, forwardRef } from 'react';
 
 
 const ContactUs = forwardRef((props, ref) => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleInput = (field, event) => {
+        console.log("file: contactUs.jsx:11 ~ field, event:", field, event.target.value);
+        const value = event.target?.value;
+        switch (field) {
+            case 'name':
+                setName(value);
+                break;
+            case 'email':
+                setEmail(value);
+                break;
+            case 'message':
+                setMessage(value);
+                break;
+            default:
+                return null;
+        }
+    };
+
+    async function handleSubmit() {
+
+        await fetch('https://api.axomium.com/v1/contact/user', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message
+            })
+        });
+        setName('');
+        setEmail('');
+        setMessage('');
+    };
+
     return (
         <div className='general-container' ref={ref}>
             <div className='general-title'>CONTACT US</div>
@@ -11,17 +53,20 @@ const ContactUs = forwardRef((props, ref) => {
             <div className='contact-form'>
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input type="text" name='name' placeholder='Enter your name' />
+                    <input type="text" name='name' value={name} placeholder='Enter your name'
+                        onChange={(e) => handleInput('name', e)} />
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
-                    <input type="email" name='email' placeholder='Enter your email' />
+                    <input type="email" name='email' value={email} placeholder='Enter your email'
+                        onChange={(e) => handleInput('email', e)} />
                 </div>
                 <div>
                     <label htmlFor="message">Your Message(Optional)</label>
-                    <textarea type="text" id='contactMessage' name='message' placeholder='Write your message...' />
+                    <textarea type="text" id='contactMessage' name='message' value={message} placeholder='Write your message...'
+                        onChange={(e) => handleInput('message', e)} />
                 </div>
-                <div><button className='red-button'>Submit</button></div>
+                <div><button className='red-button' onClick={handleSubmit}>Submit</button></div>
             </div>
         </div>
     );
