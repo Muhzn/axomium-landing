@@ -85,7 +85,7 @@ const Footer = ({ targetRef }) => {
                     <div className='footer-navigation-list'>
                         <div onClick={() => handleScroll('title')}>Home</div>
                         <div onClick={() => handleScroll('description')}>About Us</div>
-                        <div onClick={() => handleScroll('ourOfferings')}>our Offerings</div>
+                        <div onClick={() => handleScroll('ourOfferings')}>Our Offerings</div>
                         <div onClick={() => handleScroll('blogs')}>Blog</div>
                     </div>
                 </div>
