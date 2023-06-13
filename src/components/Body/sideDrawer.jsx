@@ -10,7 +10,6 @@ const SideDrawer = forwardRef((props, ref) => {
 
 
     const handleScroll = (component) => {
-        console.log('hit');
         switch (component) {
             case 'description':
                 targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
@@ -33,7 +32,7 @@ const SideDrawer = forwardRef((props, ref) => {
         <div className='side-drawer-container'>
             <div className='side-drawer-header'>
                 <div><img src={logo} alt="logo" /></div>
-                <div><img src={close} alt="logo" /></div>
+                <div><img src={close} alt="logo" onClick={closeSideBar} /></div>
             </div>
             <div className='side-drawer-list-container'>
                 <div className='side-drawer-list-item' onClick={() => handleScroll('title')}>
