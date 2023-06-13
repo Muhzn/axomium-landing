@@ -304,6 +304,8 @@ code {
   flex-direction: column;
   justify-content: center;
   display: none;
+  height: 40em;
+  padding-top: 1em;
 }
 
 .footer-upper-container {
