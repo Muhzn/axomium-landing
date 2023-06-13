@@ -33,7 +33,7 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
     return (
         <div>
             <div className='nav-bar'>
-                <div className={isMobile ? 'nav-bar-left-mobile' : 'nav-bar-left-desktop'}>
+                <div className='navbar-left'>
                     <img src={logo} alt="axomium" />
                 </div>
                 {/* {!isMobile ? <div className='nav-bar-middle'>
