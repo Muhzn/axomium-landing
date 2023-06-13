@@ -10,6 +10,9 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
 
     const handleScroll = (component) => {
         switch (component) {
+            case 'title':
+                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                break;
             case 'description':
                 targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
                 break;
@@ -34,7 +37,7 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
                     <img src={logo} alt="axomium" />
                 </div>
                 {!isMobile ? <div className='nav-bar-middle'>
-                    {/* <label className='nav-item' >Home</label> */}
+                    <label className='nav-item' onClick={() => handleScroll('title')} >Home</label>
                     <label className='nav-item' onClick={() => handleScroll('description')}>About Us</label>
                     <label className='nav-item' onClick={() => handleScroll('ourOfferings')}>Our Offerings</label>
                     <label className='nav-item' onClick={() => handleScroll('blogs')}>Blog</label>
