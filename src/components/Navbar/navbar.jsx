@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/images/logo.png';
 import menu from '../../assets/images/menu.svg';
 import { isBrowser, isMobile } from 'react-device-detect';
 
-const Navbar = ({ targetRef }) => {
+
+const Navbar = ({ targetRef, openSideDrawer }) => {
+
+
 
     const handleScroll = (component) => {
         switch (component) {
@@ -41,11 +44,12 @@ const Navbar = ({ targetRef }) => {
                         <button className='grey-button' onClick={() => handleScroll('contactUs')}>
                             Contact Us
                         </button> :
-                        null
-                        // <button className='menu-button'><img src={menu} alt='menu' /></button>
+                        <button className='menu-button'><img src={menu} alt='menu' onClick={openSideDrawer} /></button>
                     }
                 </div >
+
             </div>
+
         </div>
     );
 };

@@ -81,8 +81,26 @@ code {
 .red-button:active {
   background: #d04a4a;
   ;
-
 }
+
+.white-button {
+  color: #CC2D2D;
+  background: #FFFFFF;
+  padding: 15px 30px;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+  width: 168px;
+  font-weight: 600;
+  font-size: 20px;
+  height: 49px;
+}
+
+.white-button:active {
+  background: rgb(255, 207, 207);
+  ;
+}
+
 
 .menu-button {
   color: #FFFFFF;
@@ -163,8 +181,8 @@ code {
   text-align: left;
   line-height: 140%;
   margin-left: 39px;
-  position: relative;
-  top: 10px;
+  /* position: relative; */
+  /* top: 10px; */
 }
 
 .app-description-right {
@@ -463,6 +481,39 @@ input::placeholder {
   font-size: 14px;
   line-height: 130%;
   margin-bottom: 1em;
+}
+
+.side-drawer-container {
+  background: #CC2D2D;
+  height: 100vh;
+}
+
+.side-drawer-header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.side-drawer-list-container {
+  padding: 0 1em;
+}
+
+.side-drawer-list-item {
+  font-size: 32px;
+  line-height: 38px;
+  line-height: 120%;
+  color: #FFFFFF;
+  text-align: left;
+  margin: 1em 0;
+}
+
+.sidebar-background-logo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
 }
 
 /* For Mobile Phones Portrait or Landscape View */

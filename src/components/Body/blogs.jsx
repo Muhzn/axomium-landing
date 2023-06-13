@@ -9,9 +9,9 @@ const Blogs = forwardRef((props, ref) => {
     }, []);
 
     const fetchBlogs = async () => {
-        const response = await fetch("https://api.axomium.com/v1/blog/index?pageNum=1&pageSize=3");
-        const jsonData = await response.json();
-        setBlogsList(jsonData.Items);
+        // const response = await fetch("https://api.axomium.com/v1/blog/index?pageNum=1&pageSize=4");
+        // const jsonData = await response.json();
+        // setBlogsList(jsonData.Items);
     };
     return (
         <div className='general-container-grey' ref={ref}>

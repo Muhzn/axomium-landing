@@ -1,4 +1,6 @@
-import React, { createRef, useRef } from 'react';
+import React, { useState, useRef } from 'react';
+import Drawer from 'react-modern-drawer';
+import 'react-modern-drawer/dist/index.css';
 import Navbar from '../components/Navbar/navbar';
 import Title from '../components/Body/title';
 import Description from '../components/Body/description';
@@ -7,8 +9,15 @@ import Faq from '../components/Body/faq';
 import Footer from '../components/Body/footer';
 import ContactUs from '../components/Body/contactUs';
 import Blogs from '../components/Body/blogs';
+import SideDrawer from '../components/Body/sideDrawer';
 
 function Landing() {
+
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const toggleSideBar = () => {
+        setIsDrawerOpen((prevState) => !prevState);
+    };
+
     const homeRef = useRef(null);
     const descriptionRef = useRef(null);
     const ourOfferingRef = useRef(null);
@@ -24,7 +33,14 @@ function Landing() {
     };
     return (
         <div className="App">
-            <Navbar targetRef={allRefs} />
+            <Drawer open={isDrawerOpen}
+                onClose={toggleSideBar}
+                direction='right'
+                size={'100vw'}
+            >
+                <div><SideDrawer targetRef={allRefs} closeSideBar={toggleSideBar} /></div>
+            </Drawer>
+            <Navbar targetRef={allRefs} openSideDrawer={toggleSideBar} />
             <Title learnMoreRef={ourOfferingRef} ref={homeRef} />
             <Description ref={descriptionRef} />
             <OurOfferings ref={ourOfferingRef} />
