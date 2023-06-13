@@ -25,16 +25,12 @@ code {
   z-index: 1;
 }
 
-.nav-bar-right-desktop {
+.nav-bar-right {
   margin-right: 120px;
 }
 
 .nav-bar-left-desktop {
   margin-left: 120px;
-}
-
-.nav-bar-right-mobile {
-  margin-right: 20px;
 }
 
 .nav-bar-left-mobile {
@@ -528,6 +524,10 @@ input::placeholder {
     display: none;
   }
 
+  .nav-bar-right {
+    margin-right: 20px;
+  }
+
   .navbar-contact {
     display: none;
   }
@@ -638,6 +638,10 @@ input::placeholder {
 
   .menu-button {
     display: block;
+  }
+
+  .nav-bar-right {
+    margin-right: 30px;
   }
 
   .app-title-sub {

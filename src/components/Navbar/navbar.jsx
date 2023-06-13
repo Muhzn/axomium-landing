@@ -56,7 +56,7 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
                     <label className='nav-item' onClick={() => handleScroll('ourOfferings')}>Our Offerings</label>
                     <label className='nav-item' onClick={() => handleScroll('blogs')}>Blog</label>
                 </div>
-                <div className={isMobile ? 'nav-bar-right-mobile' : 'nav-bar-right-desktop'}>
+                <div className='nav-bar-right'>
                     <button className='grey-button navbar-contact' onClick={() => handleScroll('contactUs')}>
                         Contact Us
                     </button>
