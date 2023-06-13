@@ -22,6 +22,7 @@ code {
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  z-index: 1;
 }
 
 .nav-bar-right-desktop {
@@ -159,13 +160,12 @@ code {
 
 .app-description-text {
   display: flex;
-  gap: 121px;
   flex-wrap: wrap;
   row-gap: 75px;
 }
 
 .app-description-text-left {
-  /* width: 473px; */
+  width: 473px;
   color: #FFFFFF;
   text-align: left;
   font-weight: 500;
@@ -186,13 +186,13 @@ code {
   text-align: left;
   line-height: 140%;
   margin-left: 39px;
-  /* position: relative; */
-  /* top: 10px; */
+  position: relative;
+  top: 10px;
 }
 
 .app-description-right {
   display: flex;
-  margin-left: 85px;
+  width: 554px;
 }
 
 .white-separator {
@@ -554,7 +554,7 @@ input::placeholder {
   }
 
   .app-description-text-left {
-    width: 262px;
+    width: unset;
     font-size: 36px;
     line-height: 110%;
     margin-left: 20px;
@@ -568,6 +568,7 @@ input::placeholder {
 
   .app-description-right {
     margin-left: 24px;
+    width: unset;
   }
 
   .background-logo {
@@ -626,6 +627,19 @@ input::placeholder {
 
 /* For Tablet View */
 @media screen and (min-device-width: 640px) and (max-device-width: 1024px) {
+
+  .nav-bar-middle {
+    display: none;
+  }
+
+  .navbar-contact {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
   .app-title-sub {
     font-size: 20px;
     width: 513px;
@@ -644,7 +658,7 @@ input::placeholder {
   }
 
   .app-description-text-left {
-    width: 452px;
+    width: unset;
     margin-left: 40px;
   }
 
@@ -656,6 +670,7 @@ input::placeholder {
 
   .app-description-right {
     margin-left: 24px;
+    width: unset
   }
 
   .our-offerings-list {

@@ -10,9 +10,13 @@ import Footer from '../components/Body/footer';
 import ContactUs from '../components/Body/contactUs';
 import Blogs from '../components/Body/blogs';
 import SideDrawer from '../components/Body/sideDrawer';
+import { useMediaQuery } from 'react-responsive';
 
 function Landing() {
 
+    const isTab = useMediaQuery({ minWidth: 601, maxWidth: 1200 });
+
+    console.log(isTab);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const toggleSideBar = () => {
         setIsDrawerOpen((prevState) => !prevState);
@@ -36,7 +40,7 @@ function Landing() {
             <Drawer open={isDrawerOpen}
                 onClose={toggleSideBar}
                 direction='right'
-                size={'100vw'}
+                size={isTab === false ? ('100vw') : ('80vw')}
             >
                 <div><SideDrawer targetRef={allRefs} closeSideBar={toggleSideBar} /></div>
             </Drawer>
