@@ -11,6 +11,9 @@ const SideDrawer = forwardRef((props, ref) => {
 
     const handleScroll = (component) => {
         switch (component) {
+            case 'title':
+                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                break;
             case 'description':
                 targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
                 break;

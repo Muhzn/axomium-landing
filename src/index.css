@@ -114,6 +114,7 @@ code {
   height: 44px;
   width: 44px;
   border-radius: 50%;
+  display: none;
 }
 
 .menu-button:active {
@@ -522,6 +523,19 @@ input::placeholder {
 
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
+
+  .nav-bar-middle {
+    display: none;
+  }
+
+  .navbar-contact {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
   .app-title-sub {
     font-size: 14px;
     width: 209px;

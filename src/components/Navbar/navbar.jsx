@@ -36,7 +36,7 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
                 <div className={isMobile ? 'nav-bar-left-mobile' : 'nav-bar-left-desktop'}>
                     <img src={logo} alt="axomium" />
                 </div>
-                {!isMobile ? <div className='nav-bar-middle'>
+                {/* {!isMobile ? <div className='nav-bar-middle'>
                     <label className='nav-item' onClick={() => handleScroll('title')} >Home</label>
                     <label className='nav-item' onClick={() => handleScroll('description')}>About Us</label>
                     <label className='nav-item' onClick={() => handleScroll('ourOfferings')}>Our Offerings</label>
@@ -49,6 +49,19 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
                         </button> :
                         <button className='menu-button'><img src={menu} alt='menu' onClick={openSideDrawer} /></button>
                     }
+                </div > */}
+                <div className='nav-bar-middle'>
+                    <label className='nav-item' onClick={() => handleScroll('title')} >Home</label>
+                    <label className='nav-item' onClick={() => handleScroll('description')}>About Us</label>
+                    <label className='nav-item' onClick={() => handleScroll('ourOfferings')}>Our Offerings</label>
+                    <label className='nav-item' onClick={() => handleScroll('blogs')}>Blog</label>
+                </div>
+                <div className={isMobile ? 'nav-bar-right-mobile' : 'nav-bar-right-desktop'}>
+                    <button className='grey-button navbar-contact' onClick={() => handleScroll('contactUs')}>
+                        Contact Us
+                    </button>
+                    <button className='menu-button'><img src={menu} alt='menu' onClick={openSideDrawer} /></button>
+
                 </div >
 
             </div>
