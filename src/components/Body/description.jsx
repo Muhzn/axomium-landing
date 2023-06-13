@@ -9,7 +9,7 @@ const Description = forwardRef((props, ref) => {
 
     return (
         <div className='app-description' ref={ref}>
-            {!isMobile ? <img
+            {/* {!isMobile ? <img
                 className='background-logo'
                 src={backgroundLogo}
                 alt="axomium-logo"
@@ -23,7 +23,7 @@ const Description = forwardRef((props, ref) => {
                     src={backgroundLogoMobile}
                     alt="axomium-logo"
                 ></img>
-            }
+            } */}
             <div className='app-description-text'>
                 <div className='app-description-text-left'>Transform your business with <strong>blockchain</strong> technology.</div>
                 <div className='app-description-right'>

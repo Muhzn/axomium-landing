@@ -150,6 +150,9 @@ code {
   height: 700px;
   align-items: center;
   background: #CC2D2D;
+  background-image: url("./assets/images/about-us-bg-desktop.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .app-description-text {
@@ -531,6 +534,10 @@ input::placeholder {
     margin-top: 40px
   }
 
+  .app-description {
+    background-image: url("./assets/images/about-us-bg-mobile.svg");
+  }
+
   .app-description-text-left {
     width: 262px;
     font-size: 36px;
@@ -615,6 +622,10 @@ input::placeholder {
     line-height: 75px;
     width: 484px;
     margin-top: 60px
+  }
+
+  .app-description {
+    background-image: url("./assets/images/about-us-bg-tab.svg");
   }
 
   .app-description-text-left {
