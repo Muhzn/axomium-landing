@@ -304,7 +304,7 @@ code {
   flex-direction: column;
   justify-content: center;
   display: none;
-  height: 40em;
+  height: unset;
   padding-top: 1em;
 }
 
@@ -319,8 +319,7 @@ code {
 
 .footer-lower-container {
   color: #FFFFFFB2;
-  margin-top: auto;
-  margin-bottom: 3em;
+  padding-bottom: 3em;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -750,7 +749,8 @@ input::placeholder {
 /* ------------------------GRID------------------------------ */
 .div1 {
   grid-area: 1 / 1 / 2 / 2;
-  width: 22em
+  width: 22em;
+  margin-left: auto;
 }
 
 .div2 {

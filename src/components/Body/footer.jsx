@@ -146,7 +146,7 @@ const Footer = ({ targetRef }) => {
                 </div>
                 <div className='footer-lower-container'>
                     <div>Copyright ©2023 Axomium.</div>
-                    <div style={{ display: 'flex', gap: '2em' }}>
+                    <div style={{ display: 'flex', gap: '2em', justifyContent: 'center' }}>
                         <div>Privacy Policy</div>
                         <div>Cookies</div>
                         <div>Terms & conditions</div>
