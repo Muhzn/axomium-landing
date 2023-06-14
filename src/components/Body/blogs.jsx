@@ -20,7 +20,7 @@ const Blogs = forwardRef((props, ref) => {
                 Dive into our <span style={{ fontWeight: 700 }}>Blog</span> for Expert Insights and Analysis
             </div>
             <div className='blog-list'>
-                {blogsList.map(blog => {
+                {blogsList.length ? blogsList.map(blog => {
                     console.log(new Date(blog.timestamp));
                     console.log(new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }));
                     return (< div className='blog-card' >
@@ -35,7 +35,8 @@ const Blogs = forwardRef((props, ref) => {
                             <div className='blog-content'>{new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
                         </div>
                     </div>);
-                })}
+                }) : <div>Coming Soon...</div>
+                }
             </div>
         </div >
     );
