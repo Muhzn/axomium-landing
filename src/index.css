@@ -148,7 +148,7 @@ code {
   align-items: center;
   background: #CC2D2D;
   background-image: url("./assets/images/about-us-bg-desktop.svg");
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
