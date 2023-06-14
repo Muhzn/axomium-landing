@@ -352,6 +352,8 @@ code {
   color: #FFFFFF;
   line-height: 140%;
   padding-top: 1em;
+  text-align: left;
+  padding-left: 2.5em;
 }
 
 .footer-newsletter {
@@ -667,6 +669,11 @@ input::placeholder {
     display: block;
   }
 
+  .footer-slogan {
+    text-align: center;
+    padding-left: unset;
+  }
+
 }
 
 /* For Tablet View */
@@ -674,6 +681,10 @@ input::placeholder {
 
   .footer-container-mobile {
     display: block;
+  }
+
+  .footer-slogan {
+    padding-left: 1.5em;
   }
 
   .footer-container-desktop {
