@@ -129,6 +129,8 @@ code {
   font-size: 20px;
   line-height: 23px;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .app-title-main {
@@ -781,6 +783,7 @@ input::placeholder {
 
 .div3 {
   grid-area: 1 / 2 / 2 / 3;
+  text-align: left;
 }
 
 .div4 {
