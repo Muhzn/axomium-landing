@@ -35,7 +35,7 @@ const Blogs = forwardRef((props, ref) => {
                             <div className='blog-content'>{new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
                         </div>
                     </div>);
-                }) : <div>Coming Soon...</div>
+                }) : <div style={{ fontWeight: 700 }}>Coming Soon...</div>
                 }
             </div>
         </div >
