@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import logo from '../../assets/images/footer-logo.svg';
+import logo from '../assets/images/footer-logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import fb from '../../assets/images/fb.png';
+import fb from '../assets/images/fb.png';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import instagram from '../../assets/images/instagram.png';
-import twitter from '../../assets/images/twitter.png';
-import linkedin from '../../assets/images/linkedin.png';
+import instagram from '../assets/images/instagram.png';
+import twitter from '../assets/images/twitter.png';
+import linkedin from '../assets/images/linkedin.png';
 
 library.add(faArrowRight);
 

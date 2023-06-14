@@ -1,26 +1,13 @@
-import React, { useState, useRef } from 'react';
-import Drawer from 'react-modern-drawer';
+import React, { useState, useRef, useEffect } from 'react';
 import 'react-modern-drawer/dist/index.css';
-import Navbar from '../components/Navbar/navbar';
 import Title from '../components/Body/title';
 import Description from '../components/Body/description';
 import OurOfferings from '../components/Body/ourOfferings';
 import Faq from '../components/Body/faq';
-import Footer from '../components/Body/footer';
 import ContactUs from '../components/Body/contactUs';
 import Blogs from '../components/Body/blogs';
-import SideDrawer from '../components/Body/sideDrawer';
-import { useMediaQuery } from 'react-responsive';
 
-function Landing() {
-
-    const isTab = useMediaQuery({ minWidth: 601, maxWidth: 1200 });
-
-    console.log(isTab);
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const toggleSideBar = () => {
-        setIsDrawerOpen((prevState) => !prevState);
-    };
+function Landing({ setAllRefs }) {
 
     const homeRef = useRef(null);
     const descriptionRef = useRef(null);
@@ -35,23 +22,20 @@ function Landing() {
         blogs: blogRef,
         contactUs: contactUsRef
     };
+
+    useEffect(() => {
+        setAllRefs(allRefs);
+    }, []);
+
     return (
         <div className="App">
-            <Drawer open={isDrawerOpen}
-                onClose={toggleSideBar}
-                direction='right'
-                size={isTab === false ? ('100vw') : ('80vw')}
-            >
-                <div><SideDrawer targetRef={allRefs} closeSideBar={toggleSideBar} /></div>
-            </Drawer>
-            <Navbar targetRef={allRefs} openSideDrawer={toggleSideBar} />
+
             <Title learnMoreRef={ourOfferingRef} ref={homeRef} />
             <Description ref={descriptionRef} />
             <OurOfferings ref={ourOfferingRef} />
             <Faq />
             <Blogs ref={blogRef} />
             <ContactUs ref={contactUsRef} />
-            <Footer targetRef={allRefs} />
         </div>
     );
 }

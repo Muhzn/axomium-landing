@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/navbar-logo.svg';
 import menu from '../../assets/images/menu.svg';
 import { isBrowser, isMobile } from 'react-device-detect';
@@ -54,7 +55,7 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
                     <label className='nav-item' onClick={() => handleScroll('title')} >Home</label>
                     <label className='nav-item' onClick={() => handleScroll('description')}>About Us</label>
                     <label className='nav-item' onClick={() => handleScroll('ourOfferings')}>Our Offerings</label>
-                    <label className='nav-item' onClick={() => handleScroll('blogs')}>Blog</label>
+                    <Link to="/blogs"><label className='nav-item'>Blog</label></Link>
                 </div>
                 <div className='nav-bar-right'>
                     <button className='grey-button navbar-contact' onClick={() => handleScroll('contactUs')}>
