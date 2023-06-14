@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../assets/images/footer-logo.png';
+import logo from '../../assets/images/footer-logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fb from '../../assets/images/fb.png';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";

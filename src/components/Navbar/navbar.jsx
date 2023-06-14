@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/navbar-logo.svg';
 import menu from '../../assets/images/menu.svg';
 import { isBrowser, isMobile } from 'react-device-detect';
 

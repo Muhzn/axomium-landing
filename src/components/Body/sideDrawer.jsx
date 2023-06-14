@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import logo from '../../assets/images/sidebar-logo.png';
-import close from '../../assets/images/close.png';
+import close from '../../assets/images/close-drawer.svg';
 import backgroundLogoMobile from '../../assets/images/axomium-white-logo-mobile.png';
 
 

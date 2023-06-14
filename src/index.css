@@ -534,7 +534,7 @@ input::placeholder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 14em;
+  grid-column-gap: 3em;
   grid-row-gap: -4em;
   background: #232323;
   /* padding: 0 5em; */
