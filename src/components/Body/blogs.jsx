@@ -1,5 +1,5 @@
 import React, { useEffect, forwardRef, useState } from 'react';
-import nft4 from '../../assets/images/nft/Bitcoin-P2P-pana 1.png';
+import { getCall } from '../../common/services';
 
 const Blogs = forwardRef((props, ref) => {
 
@@ -9,9 +9,8 @@ const Blogs = forwardRef((props, ref) => {
     }, []);
 
     const fetchBlogs = async () => {
-        // const response = await fetch("https://api.axomium.com/v1/blog/index?pageNum=1&pageSize=4");
-        // const jsonData = await response.json();
-        // setBlogsList(jsonData.Items);
+        const response = await getCall('blog/index?pageNum=1&pageSize=4');
+        setBlogsList(response.Items);
     };
     return (
         <div className='general-container-grey' ref={ref}>

@@ -1,4 +1,5 @@
 import React, { useState, forwardRef } from 'react';
+import { postCall } from '../../common/services';
 
 
 const ContactUs = forwardRef((props, ref) => {
@@ -27,18 +28,13 @@ const ContactUs = forwardRef((props, ref) => {
 
     async function handleSubmit() {
 
-        await fetch('https://api.axomium.com/v1/contact/user', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                message: message
-            })
-        });
+        const url = 'contact/user';
+        const payload = {
+            name: name,
+            email: email,
+            message: message
+        };
+        await postCall(url, payload);
         setName('');
         setEmail('');
         setMessage('');

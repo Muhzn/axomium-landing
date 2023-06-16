@@ -34,15 +34,6 @@ function App() {
     setIsDrawerOpen((prevState) => !prevState);
   };
 
-  // const allRefs = {
-  //   title: homeRef,
-  //   description: descriptionRef,
-  //   ourOfferings: ourOfferingRef,
-  //   blogs: blogRef,
-  //   contactUs: contactUsRef
-  // };
-
-
   return (
     <div className="App">
       <Drawer open={isDrawerOpen}

@@ -7,6 +7,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import instagram from '../assets/images/instagram.png';
 import twitter from '../assets/images/twitter.png';
 import linkedin from '../assets/images/linkedin.png';
+import { postCall } from '../common/services';
 
 library.add(faArrowRight);
 
@@ -18,19 +19,12 @@ const Footer = ({ targetRef }) => {
         setEmail(e.target.value);
     };
     async function handleSubmit() {
-        console.log({
+
+        const url = 'newsletter/user';
+        const payload = {
             email: email,
-        });
-        await fetch('https://api.axomium.com/v1/newsletter/user', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-            })
-        });
+        };
+        await postCall(url, payload);
         setEmail('');
     };
 
