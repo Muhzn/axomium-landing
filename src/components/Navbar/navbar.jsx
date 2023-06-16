@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/navbar-logo.svg';
 import menu from '../../assets/images/menu.svg';
@@ -6,8 +6,7 @@ import { isBrowser, isMobile } from 'react-device-detect';
 
 
 const Navbar = ({ targetRef, openSideDrawer }) => {
-
-
+    const [showNavbarList, setShowNavbarList] = useState(true);
 
     const handleScroll = (component) => {
         switch (component) {
@@ -37,19 +36,18 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
                 <div className='nav-bar-left'>
                     <Link to='/'><img src={logo} alt="axomium" /></Link>
                 </div>
-                <div className='nav-bar-middle'>
+                {showNavbarList ? <div className='nav-bar-middle'>
                     <label className='nav-item' onClick={() => handleScroll('title')} >Home</label>
                     <label className='nav-item' onClick={() => handleScroll('description')}>About Us</label>
                     <label className='nav-item' onClick={() => handleScroll('ourOfferings')}>Our Offerings</label>
                     <Link to="/blogs"><label className='nav-item'>Blog</label></Link>
-                </div>
-                <div className='nav-bar-right'>
+                </div> : null}
+                {showNavbarList ? <div className='nav-bar-right'>
                     <button className='grey-button navbar-contact' onClick={() => handleScroll('contactUs')}>
                         Contact Us
                     </button>
                     <button className='menu-button'><img src={menu} alt='menu' onClick={openSideDrawer} /></button>
-
-                </div >
+                </div > : null}
 
             </div>
 

@@ -55,8 +55,8 @@ const Footer = ({ targetRef }) => {
     };
     return (
         <div>
-            <div class="footer-container-desktop">
-                <div class="div1">
+            <div className="footer-container-desktop">
+                <div className="div1">
                     <div >
                         <Link to='/'><img src={logo} alt="axomium" /></Link>
                     </div>
@@ -64,10 +64,10 @@ const Footer = ({ targetRef }) => {
                         Your trusted partner for cutting-edge blockchain development solutions.
                     </div>
                 </div>
-                <div class="div2">
+                <div className="div2">
                     <div>Copyright ©2023 Axomium.</div>
                 </div>
-                <div class="div3">
+                <div className="div3">
                     <div className='footer-newsletter'>
                         <div className='footer-newsletter-text'>
                             SUBSCRIBE TO OUR NEWSLETTER
@@ -81,14 +81,14 @@ const Footer = ({ targetRef }) => {
                         </div>
                     </div>
                 </div>
-                <div class="div4">
+                <div className="div4">
                     <div style={{ display: 'flex', gap: '2em' }}>
                         <div>Privacy Policy</div>
                         <div>Cookies</div>
                         <div>Terms & conditions</div>
                     </div>
                 </div>
-                <div class="div5">
+                <div className="div5">
                     <div className='footer-navigation'>
                         <div className='footer-navigation-header'>COMPANY</div>
                         <div className='footer-navigation-list'>
@@ -99,7 +99,7 @@ const Footer = ({ targetRef }) => {
                         </div>
                     </div>
                 </div>
-                <div class="div6">
+                <div className="div6">
                     <div style={{ display: 'flex', gap: '2em' }}>
                         <a href="#" target='_blank'><img src={fb} alt='fb' /></a>
                         <a href="#" target='_blank'><img src={twitter} alt='twitter' /></a>

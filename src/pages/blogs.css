@@ -1,0 +1,39 @@
+.blogs-container {
+    color: '#000000';
+    margin: 5em 0;
+}
+
+.blogs-list-container {
+    margin: 0 3em;
+    font-weight: 600;
+    font-size: 48px
+}
+
+.blogs-list-header-container {
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chips-container {
+    display: flex;
+    gap: 0.3em;
+}
+
+.blog-item {
+    display: flex;
+}
+
+.blog-item-image {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.blog-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 1em;
+    width: 10em
+}
