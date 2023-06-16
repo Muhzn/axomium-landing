@@ -35,22 +35,8 @@ const Navbar = ({ targetRef, openSideDrawer }) => {
         <div>
             <div className='nav-bar'>
                 <div className='nav-bar-left'>
-                    <img src={logo} alt="axomium" />
+                    <Link to='/'><img src={logo} alt="axomium" /></Link>
                 </div>
-                {/* {!isMobile ? <div className='nav-bar-middle'>
-                    <label className='nav-item' onClick={() => handleScroll('title')} >Home</label>
-                    <label className='nav-item' onClick={() => handleScroll('description')}>About Us</label>
-                    <label className='nav-item' onClick={() => handleScroll('ourOfferings')}>Our Offerings</label>
-                    <label className='nav-item' onClick={() => handleScroll('blogs')}>Blog</label>
-                </div> : null}
-                <div className={isMobile ? 'nav-bar-right-mobile' : 'nav-bar-right-desktop'}>
-                    {isBrowser ?
-                        <button className='grey-button' onClick={() => handleScroll('contactUs')}>
-                            Contact Us
-                        </button> :
-                        <button className='menu-button'><img src={menu} alt='menu' onClick={openSideDrawer} /></button>
-                    }
-                </div > */}
                 <div className='nav-bar-middle'>
                     <label className='nav-item' onClick={() => handleScroll('title')} >Home</label>
                     <label className='nav-item' onClick={() => handleScroll('description')}>About Us</label>

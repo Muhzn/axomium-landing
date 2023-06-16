@@ -79,7 +79,6 @@ a {
 
 .red-button:active {
   background: #d04a4a;
-  ;
 }
 
 .white-button {
@@ -393,11 +392,16 @@ a {
   border-radius: 10px;
   margin-left: 1em;
   width: 3em;
+  cursor: pointer;
 }
 
 #newsletter::placeholder {
   color: #FFFFFF4D;
   opacity: 1;
+}
+
+.newsletter-button:active {
+  background: #d04a4a;
 }
 
 .footer-navigation-header {

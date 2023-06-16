@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+
 import logo from '../assets/images/footer-logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fb from '../assets/images/fb.png';
@@ -8,6 +10,7 @@ import instagram from '../assets/images/instagram.png';
 import twitter from '../assets/images/twitter.png';
 import linkedin from '../assets/images/linkedin.png';
 import { postCall } from '../common/services';
+
 
 library.add(faArrowRight);
 
@@ -29,8 +32,7 @@ const Footer = ({ targetRef }) => {
     };
 
     const handleScroll = (component) => {
-        console.log(component);
-        console.log(targetRef);
+
         switch (component) {
             case 'title':
                 targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
@@ -56,7 +58,7 @@ const Footer = ({ targetRef }) => {
             <div class="footer-container-desktop">
                 <div class="div1">
                     <div >
-                        <img src={logo} alt="axomium" />
+                        <Link to='/'><img src={logo} alt="axomium" /></Link>
                     </div>
                     <div className='footer-slogan'>
                         Your trusted partner for cutting-edge blockchain development solutions.
@@ -72,7 +74,7 @@ const Footer = ({ targetRef }) => {
                         </div>
                         <div className='footer-newsletter-input'>
                             <input className='subscribe-input' id="newsletter" type="text" placeholder='Enter your email'
-                                onChange={(e) => handleInput(e)} />
+                                value={email} onChange={(e) => handleInput(e)} />
                             <button className='newsletter-button' onClick={handleSubmit}>
                                 <FontAwesomeIcon icon="arrow-right" />
                             </button>
@@ -110,7 +112,7 @@ const Footer = ({ targetRef }) => {
                 <div className='footer-upper-container'>
                     <div className='footer-logo'>
                         <div >
-                            <img src={logo} alt="axomium" />
+                            <Link to='/'><img src={logo} alt="axomium" /></Link>
                         </div>
                         <div className='footer-slogan'>
                             Your trusted partner for cutting-edge blockchain development solutions.
