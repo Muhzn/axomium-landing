@@ -6,7 +6,7 @@ import { getCall } from '../common/services';
 import './blogs.css';
 import nft7 from '../assets/images/nft/Hidden mining-amico.png';
 import arrowRight from '../assets/images/arrow-right.svg';
-
+import ContactUs from '../components/Body/contactUs';
 
 
 
@@ -149,6 +149,7 @@ const BlogsPage = () => {
                 <Pagination count={Math.round(blogsCount / blogsPerPage)} color='error'
                     shape="rounded" onChange={handlePageChange} />
             </div>
+            <ContactUs />
         </div>
     );
 };
