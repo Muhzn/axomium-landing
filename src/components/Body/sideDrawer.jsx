@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/sidebar-logo.png';
 import close from '../../assets/images/close-drawer.svg';
 import backgroundLogoMobile from '../../assets/images/axomium-white-logo-mobile.png';
@@ -21,7 +22,7 @@ const SideDrawer = forwardRef((props, ref) => {
                 targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
                 break;
             case 'blogs':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
+                // targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
                 break;
             case 'contactUs':
                 targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
@@ -50,9 +51,13 @@ const SideDrawer = forwardRef((props, ref) => {
                     Our Offerings
                 </div>
                 <hr color='#FFFFFF' style={{ opacity: 0.2 }} />
-                <div className='side-drawer-list-item' onClick={() => handleScroll('blogs')}>
-                    Blogs
-                </div>
+                <Link to="/blogs">
+                    <div className='side-drawer-list-item'
+                        onClick={() => handleScroll('blogs')}
+                    >
+                        Blogs
+                    </div>
+                </Link>
                 <hr color='#FFFFFF' style={{ opacity: 0.2 }} />
                 <div style={{
                     float: 'left', marginTop: '2em', zIndex: 1, position: 'absolute'
