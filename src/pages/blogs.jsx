@@ -13,11 +13,15 @@ import arrowRight from '../assets/images/arrow-right.svg';
 const BlogsPage = () => {
 
     const [blogsToList, setBlogsToList] = useState([]);
+    const [coverBlogs, setCoverBlogs] = useState([]);
     const [blogsCount, setBlogsCount] = useState(0);
     const [pageNo, setPageNo] = useState(1);
 
     const blogsPerPage = 6;
 
+    useEffect(() => {
+        getCoverBlogs();
+    }, []);
     useEffect(() => {
         getBlogs(pageNo, blogsPerPage);
         window.scrollTo(0, 0);
@@ -25,9 +29,17 @@ const BlogsPage = () => {
 
     const getBlogs = async (pageNo, pageSize) => {
         const response = await getCall(`blog/index?pageNum=${pageNo}&pageSize=${pageSize}`);
-        setBlogsToList(response.Items);
+        let blogsRes = response.Items;
+        setBlogsToList(blogsRes);
         setBlogsCount(response.TotalCount);
     };
+
+    const getCoverBlogs = async (pageNo, pageSize) => {
+        const response = await getCall(`blog/index?pageNum=1&pageSize=3`);
+        let blogsRes = response.Items;
+        setCoverBlogs(blogsRes);
+    };
+
 
     const handleFilter = (key) => {
         console.log(key);
@@ -38,12 +50,58 @@ const BlogsPage = () => {
     };
     return (
         <div className='blogs-container'>
+            <div className='blogs-cover-container'>
+                <div className='blogs-cover-1' style={{ backgroundImage: `url(${coverBlogs[0]?.image_url})` }}>
+                    <div className='blogs-cover-text'>
+                        <div>
+                            <Chip label={coverBlogs[0]?.type} variant="solid"
+                                style={{
+                                    textTransform: 'capitalize',
+                                    background: '#FCF1F1',
+                                    color: '#CC2D2D',
+                                    marginBottom: '1em'
+                                }} />
+                        </div>
+                        {coverBlogs[0]?.name}
+                    </div>
+                </div>
+                <div className='blogs-cover-2' >
+                    <div className='blogs-cover-2-1' style={{ backgroundImage: `url(${coverBlogs[1]?.image_url})` }}>
+                        <div className='blogs-cover-text'>
+                            <div>
+                                <Chip label={coverBlogs[1]?.type} variant="solid"
+                                    style={{
+                                        textTransform: 'capitalize',
+                                        background: '#FCF1F1',
+                                        color: '#CC2D2D',
+                                        marginBottom: '1em'
+                                    }} />
+                            </div>
+                            {coverBlogs[1]?.name}
+                        </div>
+                    </div>
+                    <div className='blogs-cover-2-2' style={{ backgroundImage: `url(${coverBlogs[2]?.image_url})` }}>
+                        <div className='blogs-cover-text'>
+                            <div>
+                                <Chip label={coverBlogs[2]?.type} variant="solid"
+                                    style={{
+                                        textTransform: 'capitalize',
+                                        background: '#FCF1F1',
+                                        color: '#CC2D2D',
+                                        marginBottom: '1em'
+                                    }} />
+                            </div>
+                            {coverBlogs[2]?.name}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className='blogs-list-container'>
                 <div className='blogs-list-header-container'>
                     <div>Our Blogs</div>
                     <div className='chips-container'>
                         {/* <Chip label="All" variant="solid" color="error" onClick={() => handleFilter('all')} /> */}
-                        <Chip label="Blockchain" vvariant="solid" color="error" onClick={() => handleFilter('blockchain')} />
+                        <Chip label="Blockchain" variant="solid" color="error" onClick={() => handleFilter('blockchain')} />
                         {/* <Chip label="Artificial Intelligence" variant="outlined" onClick={() => handleFilter('ai')} /> */}
                     </div>
                 </div>
