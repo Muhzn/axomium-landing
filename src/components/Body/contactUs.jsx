@@ -9,7 +9,6 @@ const ContactUs = forwardRef((props, ref) => {
     const [message, setMessage] = useState('');
 
     const handleInput = (field, event) => {
-        console.log("file: contactUs.jsx:11 ~ field, event:", field, event.target.value);
         const value = event.target?.value;
         switch (field) {
             case 'name':

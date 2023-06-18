@@ -21,7 +21,6 @@ export const handleNavigation = (component, targetRef, navigate) => {
         }
     }
     else {
-        console.log('other page');
         navigate(`/#${component}`);
     }
 };
