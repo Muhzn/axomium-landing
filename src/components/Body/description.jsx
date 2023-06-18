@@ -9,21 +9,6 @@ const Description = forwardRef((props, ref) => {
 
     return (
         <div className='app-description' ref={ref}>
-            {/* {!isMobile ? <img
-                className='background-logo'
-                src={backgroundLogo}
-                alt="axomium-logo"
-            ></img> : isTab ? <img
-                className='background-logo'
-                src={backgroundLogo}
-                alt="axomium-logo"
-            ></img> :
-                <img
-                    className='background-logo'
-                    src={backgroundLogoMobile}
-                    alt="axomium-logo"
-                ></img>
-            } */}
             <div className='app-description-text'>
                 <div className='app-description-text-left'>Transform your business with <strong>blockchain</strong> technology.</div>
                 <div className='app-description-right'>

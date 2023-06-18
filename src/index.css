@@ -170,7 +170,7 @@ a {
   font-size: 64px;
   line-height: 110%;
   margin-left: 121px;
-  margin-right: 121px;
+  margin-right: 100px;
   /* position: relative; */
   /* top: -10px; */
 }
@@ -184,6 +184,7 @@ a {
   text-align: left;
   line-height: 140%;
   margin-left: 39px;
+  margin-right: 121px;
   position: relative;
   top: 10px;
 }
@@ -610,6 +611,7 @@ input::placeholder {
     font-size: 15px;
     width: 299px;
     margin-left: 20px;
+    margin-right: unset;
   }
 
   .app-description-right {
@@ -753,6 +755,8 @@ input::placeholder {
     font-size: 15px;
     width: 299px;
     margin-left: 20px;
+    margin-right: unset;
+
   }
 
   .app-description-right {
