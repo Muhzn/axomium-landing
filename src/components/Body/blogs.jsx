@@ -20,11 +20,9 @@ const Blogs = forwardRef((props, ref) => {
             </div>
             <div className='blog-list'>
                 {blogsList.length ? blogsList.map(blog => {
-                    console.log(new Date(blog.timestamp));
-                    console.log(new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }));
                     return (< div className='blog-card' >
                         <div className='blog-image'>
-                            <img width={330} style={{ borderRadius: '20px' }} src={blog.image_url} alt="blog" />
+                            <img className='blog-card-image' style={{ borderRadius: '20px' }} src={blog.image_url} alt="blog" />
                         </div>
                         <div style={{ textAlign: 'left' }}>
                             <div className='blog-title'>{blog.name}</div>

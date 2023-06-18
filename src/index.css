@@ -483,7 +483,7 @@ input::placeholder {
 }
 
 .blog-card {
-  width: 386px;
+  width: 350px;
   background: #FFFFFF;
   border-radius: 20px;
   padding: 1em;
@@ -495,6 +495,10 @@ input::placeholder {
   width: -webkit-fill-available;
   padding-bottom: 1.5em;
   border-radius: 20px;
+}
+
+.blog-card-image {
+  width: inherit
 }
 
 .blog-title {
@@ -551,8 +555,6 @@ input::placeholder {
   grid-column-gap: 3em;
   grid-row-gap: -4em;
   background: #232323;
-  /* padding: 0 5em; */
-  /* margin: 1em 0; */
   padding-top: 5em;
   padding-bottom: 3em;
 }
@@ -685,6 +687,9 @@ input::placeholder {
     padding-left: unset;
   }
 
+  .blog-card-image {
+    width: 20em
+  }
 }
 
 /* For Tablet View */

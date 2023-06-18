@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Chip from '@mui/material/Chip';
 import Pagination from '@mui/material/Pagination';
 import { getCall } from '../common/services';
@@ -10,7 +10,7 @@ import ContactUs from '../components/Body/contactUs';
 
 
 
-const BlogsPage = () => {
+const BlogsListPage = () => {
 
     const [blogsToList, setBlogsToList] = useState([]);
     const [coverBlogs, setCoverBlogs] = useState([]);
@@ -22,6 +22,7 @@ const BlogsPage = () => {
     useEffect(() => {
         getCoverBlogs();
     }, []);
+
     useEffect(() => {
         getBlogs(pageNo, blogsPerPage);
         window.scrollTo(0, 0);
@@ -113,29 +114,30 @@ const BlogsPage = () => {
                                     <div>
                                         <img className='blog-item-image' src={blog.image_url} alt="" />
                                     </div>
-                                    <div className='blog-text'>
-                                        <div>
-                                            <div className='blog-item-type'>
-                                                <Chip style={{
-                                                    textTransform: 'capitalize',
-                                                    background: '#FCF1F1',
-                                                    color: '#CC2D2D'
-                                                }}
-                                                    label={blog.type} variant="solid" color="error" />
-                                            </div>
+                                    <Link to={`/blogs/blog-page#${blog.id}`}>
+                                        <div className='blog-text'>
                                             <div>
-                                                <div className='blog-title'>
-                                                    <div>{blog.name}</div>
-                                                    <div className='open-blog-mobile'>
-                                                        <img src={arrowRight} alt="" />
-                                                    </div>
+                                                <div className='blog-item-type'>
+                                                    <Chip style={{
+                                                        textTransform: 'capitalize',
+                                                        background: '#FCF1F1',
+                                                        color: '#CC2D2D'
+                                                    }}
+                                                        label={blog.type} variant="solid" color="error" />
                                                 </div>
-                                                <div className='blog-content'>{blog.description}</div>
-                                                <div className='blog-content' style={{ fontWeight: 600 }}>{new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                                                <div>
+                                                    <div className='blog-title'>
+                                                        <div>{blog.name}</div>
+                                                        <div className='open-blog-mobile'>
+                                                            <img src={arrowRight} alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className='blog-content'>{blog.description}</div>
+                                                    <div className='blog-content' style={{ fontWeight: 600 }}>{new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                                                </div>
                                             </div>
                                         </div>
-
-                                    </div>
+                                    </Link>
                                     <div className='open-blog-desktop'>
                                         <img src={arrowRight} alt="" />
                                     </div>
@@ -154,4 +156,4 @@ const BlogsPage = () => {
     );
 };
 
-export default BlogsPage;
+export default BlogsListPage;

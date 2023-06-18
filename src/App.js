@@ -9,7 +9,8 @@ import Landing from './pages/landing';
 import Navbar from './components/Navbar/navbar';
 import Footer from './components/footer';
 import SideDrawer from './components/Body/sideDrawer';
-import BlogsPage from './pages/blogs';
+import BlogsListPage from './pages/blogs';
+import Blog from './pages/blogPage';
 
 import './App.css';
 
@@ -47,7 +48,8 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Landing setAllRefs={setAllRefs} />} />
-        <Route path="blogs" element={<BlogsPage />} />
+        <Route path="blogs" element={<BlogsListPage />} />
+        <Route path="blogs/blog-page" element={<Blog />} />
 
       </Routes>
       <Footer targetRef={allRefs} />
