@@ -140,6 +140,7 @@
     .blog-text {
         margin-left: unset;
         flex-direction: row;
+        width: unset;
     }
 
     .blog-title {

@@ -53,47 +53,53 @@ const BlogsListPage = () => {
         <div className='blogs-container'>
             <div className='blogs-cover-container'>
                 <div className='blogs-cover-1' style={{ backgroundImage: `url(${coverBlogs[0]?.image_url})` }}>
-                    <div className='blogs-cover-text'>
-                        <div>
-                            <Chip label={coverBlogs[0]?.type} variant="solid"
-                                style={{
-                                    textTransform: 'capitalize',
-                                    background: '#FCF1F1',
-                                    color: '#CC2D2D',
-                                    marginBottom: '1em'
-                                }} />
+                    <Link to={`/blogs/blog-page#${coverBlogs[0]?.id}`}>
+                        <div className='blogs-cover-text'>
+                            <div>
+                                <Chip label={coverBlogs[0]?.type} variant="solid"
+                                    style={{
+                                        textTransform: 'capitalize',
+                                        background: '#FCF1F1',
+                                        color: '#CC2D2D',
+                                        marginBottom: '1em'
+                                    }} />
+                            </div>
+                            {coverBlogs[0]?.name}
                         </div>
-                        {coverBlogs[0]?.name}
-                    </div>
+                    </Link>
                 </div>
                 <div className='blogs-cover-2' >
                     <div className='blogs-cover-2-1' style={{ backgroundImage: `url(${coverBlogs[1]?.image_url})` }}>
-                        <div className='blogs-cover-text'>
-                            <div>
-                                <Chip label={coverBlogs[1]?.type} variant="solid"
-                                    style={{
-                                        textTransform: 'capitalize',
-                                        background: '#FCF1F1',
-                                        color: '#CC2D2D',
-                                        marginBottom: '1em'
-                                    }} />
+                        <Link to={`/blogs/blog-page#${coverBlogs[1]?.id}`}>
+                            <div className='blogs-cover-text'>
+                                <div>
+                                    <Chip label={coverBlogs[1]?.type} variant="solid"
+                                        style={{
+                                            textTransform: 'capitalize',
+                                            background: '#FCF1F1',
+                                            color: '#CC2D2D',
+                                            marginBottom: '1em'
+                                        }} />
+                                </div>
+                                {coverBlogs[1]?.name}
                             </div>
-                            {coverBlogs[1]?.name}
-                        </div>
+                        </Link>
                     </div>
                     <div className='blogs-cover-2-2' style={{ backgroundImage: `url(${coverBlogs[2]?.image_url})` }}>
-                        <div className='blogs-cover-text'>
-                            <div>
-                                <Chip label={coverBlogs[2]?.type} variant="solid"
-                                    style={{
-                                        textTransform: 'capitalize',
-                                        background: '#FCF1F1',
-                                        color: '#CC2D2D',
-                                        marginBottom: '1em'
-                                    }} />
+                        <Link to={`/blogs/blog-page#${coverBlogs[2]?.id}`}>
+                            <div className='blogs-cover-text'>
+                                <div>
+                                    <Chip label={coverBlogs[2]?.type} variant="solid"
+                                        style={{
+                                            textTransform: 'capitalize',
+                                            background: '#FCF1F1',
+                                            color: '#CC2D2D',
+                                            marginBottom: '1em'
+                                        }} />
+                                </div>
+                                {coverBlogs[2]?.name}
                             </div>
-                            {coverBlogs[2]?.name}
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -139,7 +145,9 @@ const BlogsListPage = () => {
                                         </div>
                                     </Link>
                                     <div className='open-blog-desktop'>
-                                        <img src={arrowRight} alt="" />
+                                        <Link to={`/blogs/blog-page#${blog.id}`}>
+                                            <img src={arrowRight} alt="" />
+                                        </Link>
                                     </div>
 
                                 </div>

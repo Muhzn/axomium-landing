@@ -22,18 +22,22 @@ const Blogs = forwardRef((props, ref) => {
             </div>
             <div className='blog-list'>
                 {blogsList.length ? blogsList.map(blog => {
-                    return (< div className='blog-card' >
-                        <div className='blog-image'>
-                            <img className='blog-card-image' style={{ borderRadius: '20px' }} src={blog.image_url} alt="blog" />
-                        </div>
-                        <div style={{ textAlign: 'left' }}>
-                            <div className='blog-title'>{blog.name}</div>
-                            <div className='blog-content'>
-                                {blog.description}
+                    return (
+                        <Link to={`/blogs/blog-page#${blog.id}`}>
+                            < div className='blog-card' key={blog.id}>
+                                <div className='blog-image'>
+                                    <img className='blog-card-image' style={{ borderRadius: '20px' }} src={blog.image_url} alt="blog" />
+                                </div>
+                                <div style={{ textAlign: 'left' }}>
+                                    <div className='blog-title'>{blog.name}</div>
+                                    <div className='blog-content'>
+                                        {blog.description}
+                                    </div>
+                                    <div className='blog-content'>{new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                                </div>
                             </div>
-                            <div className='blog-content'>{new Date(blog.timestamp).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
-                        </div>
-                    </div>);
+                        </Link>
+                    );
                 }) : <div style={{ fontWeight: 700 }}>Coming Soon...</div>
                 }
             </div>

@@ -25,6 +25,26 @@ function Landing({ setAllRefs }) {
 
     useEffect(() => {
         setAllRefs(allRefs);
+        const scrollTo = window.location.hash.substr(1);
+        switch (scrollTo) {
+            case 'title':
+                homeRef.current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'description':
+                descriptionRef.current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'ourOfferings':
+                ourOfferingRef.current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'blogs':
+                blogRef.current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'contactUs':
+                contactUsRef.current?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            default:
+                console.log('NoTabSpecified');
+        }
     }, []);
 
     return (

@@ -1,35 +1,19 @@
 import React, { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/sidebar-logo.png';
 import close from '../../assets/images/close-drawer.svg';
 import backgroundLogoMobile from '../../assets/images/axomium-white-logo-mobile.png';
+import { handleNavigation } from '../../common/utils';
 
 
 const SideDrawer = forwardRef((props, ref) => {
     const targetRef = props.targetRef;
     const closeSideBar = props.closeSideBar;
 
+    const navigate = useNavigate();
 
     const handleScroll = (component) => {
-        switch (component) {
-            case 'title':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'description':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'ourOfferings':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'blogs':
-                // targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'contactUs':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            default:
-                console.log('NoTabSpecified');
-        }
+        handleNavigation(component, targetRef, navigate);
         closeSideBar();
     };
     return (
@@ -39,21 +23,21 @@ const SideDrawer = forwardRef((props, ref) => {
                 <div><img src={close} alt="logo" onClick={closeSideBar} /></div>
             </div>
             <div className='side-drawer-list-container'>
-                <div className='side-drawer-list-item' onClick={() => handleScroll('title')}>
+                <div className='side-drawer-list-item' onClick={() => handleScroll('title', targetRef)}>
                     Home
                 </div>
                 <hr color='#FFFFFF' style={{ opacity: 0.2 }} />
-                <div className='side-drawer-list-item' onClick={() => handleScroll('description')}>
+                <div className='side-drawer-list-item' onClick={() => handleScroll('description', targetRef)}>
                     About Us
                 </div>
                 <hr color='#FFFFFF' style={{ opacity: 0.2 }} />
-                <div className='side-drawer-list-item' onClick={() => handleScroll('ourOfferings')}>
+                <div className='side-drawer-list-item' onClick={() => handleScroll('ourOfferings', targetRef)}>
                     Our Offerings
                 </div>
                 <hr color='#FFFFFF' style={{ opacity: 0.2 }} />
                 <Link to="/blogs">
                     <div className='side-drawer-list-item'
-                        onClick={() => handleScroll('blogs')}
+                        onClick={() => handleScroll('blogs', targetRef)}
                     >
                         Blogs
                     </div>
@@ -63,7 +47,7 @@ const SideDrawer = forwardRef((props, ref) => {
                     float: 'left', marginTop: '2em', zIndex: 1, position: 'absolute'
                 }}>
                     <button className='white-button'
-                        onClick={() => handleScroll('contactUs')}
+                        onClick={() => handleScroll('contactUs', targetRef)}
                     >
                         Contact Us
                     </button>

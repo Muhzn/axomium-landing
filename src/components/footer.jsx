@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import logo from '../assets/images/footer-logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,11 +10,13 @@ import instagram from '../assets/images/instagram.png';
 import twitter from '../assets/images/twitter.png';
 import linkedin from '../assets/images/linkedin.png';
 import { postCall } from '../common/services';
+import { handleNavigation } from '../common/utils';
 
 
 library.add(faArrowRight);
 
 const Footer = ({ targetRef }) => {
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
 
@@ -31,28 +33,6 @@ const Footer = ({ targetRef }) => {
         setEmail('');
     };
 
-    const handleScroll = (component) => {
-
-        switch (component) {
-            case 'title':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'description':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'ourOfferings':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'blogs':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'contactUs':
-                targetRef[component].current?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            default:
-                console.log('NoTabSpecified');
-        }
-    };
     return (
         <div>
             <div className="footer-container-desktop">
@@ -92,10 +72,10 @@ const Footer = ({ targetRef }) => {
                     <div className='footer-navigation'>
                         <div className='footer-navigation-header'>COMPANY</div>
                         <div className='footer-navigation-list'>
-                            <div onClick={() => handleScroll('title')}>Home</div>
-                            <div onClick={() => handleScroll('description')}>About Us</div>
-                            <div onClick={() => handleScroll('ourOfferings')}>Our Offerings</div>
-                            <div onClick={() => handleScroll('blogs')}>Blog</div>
+                            <div onClick={() => handleNavigation('title', targetRef, navigate)}>Home</div>
+                            <div onClick={() => handleNavigation('description', targetRef, navigate)}>About Us</div>
+                            <div onClick={() => handleNavigation('ourOfferings', targetRef, navigate)}>Our Offerings</div>
+                            <div onClick={() => handleNavigation('blogs', targetRef, navigate)}>Blog</div>
                         </div>
                     </div>
                 </div>
@@ -133,10 +113,10 @@ const Footer = ({ targetRef }) => {
                     <div className='footer-navigation'>
                         <div className='footer-navigation-header'>COMPANY</div>
                         <div className='footer-navigation-list'>
-                            <div onClick={() => handleScroll('title')}>Home</div>
-                            <div onClick={() => handleScroll('description')}>About Us</div>
-                            <div onClick={() => handleScroll('ourOfferings')}>Our Offerings</div>
-                            <div onClick={() => handleScroll('blogs')}>Blog</div>
+                            <div onClick={() => handleNavigation('title', targetRef, navigate)}>Home</div>
+                            <div onClick={() => handleNavigation('description', targetRef, navigate)}>About Us</div>
+                            <div onClick={() => handleNavigation('ourOfferings', targetRef, navigate)}>Our Offerings</div>
+                            <div onClick={() => handleNavigation('blogs', targetRef, navigate)}>Blog</div>
                         </div>
                     </div>
                 </div>
