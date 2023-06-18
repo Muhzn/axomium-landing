@@ -18,7 +18,6 @@ const Blog = () => {
     const getBlogData = async (id) => {
         const url = `blog/id?id=${id}`;
         const data = await getCall(url);
-        console.log(data);
         setBlogContent(data?.response);
     };
     return (

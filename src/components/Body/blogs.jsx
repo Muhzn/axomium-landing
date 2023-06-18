@@ -23,8 +23,8 @@ const Blogs = forwardRef((props, ref) => {
             <div className='blog-list'>
                 {blogsList.length ? blogsList.map(blog => {
                     return (
-                        <Link to={`/blogs/blog-page#${blog.id}`}>
-                            < div className='blog-card' key={blog.id}>
+                        <Link to={`/blogs/blog-page#${blog.id}`} key={blog.id}>
+                            < div className='blog-card' >
                                 <div className='blog-image'>
                                     <img className='blog-card-image' style={{ borderRadius: '20px' }} src={blog.image_url} alt="blog" />
                                 </div>
