@@ -1,4 +1,6 @@
 import React, { useEffect, forwardRef, useState } from 'react';
+import { Link } from "react-router-dom";
+
 import { getCall } from '../../common/services';
 
 const Blogs = forwardRef((props, ref) => {
@@ -35,6 +37,11 @@ const Blogs = forwardRef((props, ref) => {
                 }) : <div style={{ fontWeight: 700 }}>Coming Soon...</div>
                 }
             </div>
+            <Link to="/blogs">
+                <div style={{ marginTop: '58px' }}>
+                    <button className='red-button'>View more</button>
+                </div>
+            </Link>
         </div >
     );
 });

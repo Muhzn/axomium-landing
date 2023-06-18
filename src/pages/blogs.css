@@ -99,6 +99,29 @@
     margin: 0 0 30px 50px;
 }
 
+.blog-page-container {
+    padding: 7em 0em;
+}
+
+.blog-page-header {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    margin: 40px 0
+}
+
+.blog-content-container {
+    margin: 5em;
+    text-align: left;
+    color: #000000;
+}
+
+.blog-page-description {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    margin: 40px 0
+}
 
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
@@ -161,6 +184,15 @@
     .blogs-cover-2-2 {
         height: 40%;
         height: 50vh;
+    }
+
+    .blog-content-container {
+        margin: 1.5em;
+    }
+
+    .blog-page-header {
+        font-size: 24px;
+        line-height: 28px;
     }
 
 }
