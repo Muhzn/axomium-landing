@@ -9,7 +9,7 @@ const Blogs = forwardRef((props, ref) => {
     }, []);
 
     const fetchBlogs = async () => {
-        const response = await getCall('blog/index?pageNum=1&pageSize=4');
+        const response = await getCall('blog/index?pageNum=1&pageSize=3');
         setBlogsList(response.Items);
     };
     return (

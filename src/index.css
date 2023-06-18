@@ -484,7 +484,7 @@ input::placeholder {
 }
 
 .blog-card {
-  width: 350px;
+  width: 300px;
   background: #FFFFFF;
   border-radius: 20px;
   padding: 1em;
@@ -687,6 +687,10 @@ input::placeholder {
   .footer-slogan {
     text-align: center;
     padding-left: unset;
+  }
+
+  .blog-card {
+    width: unset;
   }
 
   .blog-card-image {
