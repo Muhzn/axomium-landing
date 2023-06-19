@@ -4,7 +4,12 @@ import Chip from '@mui/material/Chip';
 import Pagination from '@mui/material/Pagination';
 import { getCall } from '../common/services';
 import './blogs.css';
-import nft7 from '../assets/images/nft/Hidden mining-amico.png';
+
+import blogCover1 from '../assets/images/blog-cover-1.svg';
+import blogCover2 from '../assets/images/blog-cover-2.svg';
+import blogCover3 from '../assets/images/blog-cover-3.svg';
+
+
 import arrowRight from '../assets/images/arrow-right.svg';
 import ContactUs from '../components/Body/contactUs';
 
@@ -35,7 +40,7 @@ const BlogsListPage = () => {
         setBlogsCount(response.TotalCount);
     };
 
-    const getCoverBlogs = async (pageNo, pageSize) => {
+    const getCoverBlogs = async () => {
         const response = await getCall(`blog/index?pageNum=1&pageSize=3`);
         let blogsRes = response.Items;
         setCoverBlogs(blogsRes);
@@ -52,7 +57,8 @@ const BlogsListPage = () => {
     return (
         <div className='blogs-container'>
             <div className='blogs-cover-container'>
-                <div className='blogs-cover-1' style={{ backgroundImage: `url(${coverBlogs[0]?.image_url})` }}>
+                <div className='blogs-cover-1'
+                    style={{ backgroundImage: `url(${blogCover1})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
                     <Link to={`/blogs/blog-page#${coverBlogs[0]?.id}`}>
                         <div className='blogs-cover-text'>
                             <div>
@@ -69,7 +75,9 @@ const BlogsListPage = () => {
                     </Link>
                 </div>
                 <div className='blogs-cover-2' >
-                    <div className='blogs-cover-2-1' style={{ backgroundImage: `url(${coverBlogs[1]?.image_url})` }}>
+                    <div className='blogs-cover-2-1'
+                        style={{ backgroundImage: `url(${blogCover2})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+                    >
                         <Link to={`/blogs/blog-page#${coverBlogs[1]?.id}`}>
                             <div className='blogs-cover-text'>
                                 <div>
@@ -85,7 +93,9 @@ const BlogsListPage = () => {
                             </div>
                         </Link>
                     </div>
-                    <div className='blogs-cover-2-2' style={{ backgroundImage: `url(${coverBlogs[2]?.image_url})` }}>
+                    <div className='blogs-cover-2-2'
+                        style={{ backgroundImage: `url(${blogCover3})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+                    >
                         <Link to={`/blogs/blog-page#${coverBlogs[2]?.id}`}>
                             <div className='blogs-cover-text'>
                                 <div>

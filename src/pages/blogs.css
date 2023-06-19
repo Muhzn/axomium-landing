@@ -55,7 +55,7 @@
 
 .blogs-cover-container {
     display: flex;
-    height: 100vh;
+    height: 110vh;
 }
 
 .blogs-cover-1 {
@@ -71,6 +71,8 @@
 
 .blogs-cover-2 {
     width: 50%;
+    font-size: 24px;
+    line-height: 28px;
 }
 
 .blogs-cover-2-1 {
@@ -79,7 +81,6 @@
     display: flex;
     flex-direction: column-reverse;
     font-weight: 700;
-    font-size: 40px;
     color: #FFFFFF;
 }
 
@@ -89,7 +90,6 @@
     display: flex;
     flex-direction: column-reverse;
     font-weight: 700;
-    font-size: 40px;
     color: #FFFFFF;
 }
 
@@ -170,21 +170,25 @@
     .blogs-cover-1 {
         width: unset;
         height: 50vh;
+        font-size: 24px;
+        line-height: 28px;
     }
 
     .blogs-cover-2 {
         width: unset;
+        font-size: 24px;
+        line-height: 28px;
     }
 
     .blogs-cover-2-1 {
         height: 40%;
-        height: 50vh;
+        height: 40vh;
 
     }
 
     .blogs-cover-2-2 {
         height: 40%;
-        height: 50vh;
+        height: 40vh;
     }
 
     .blog-content-container {
