@@ -123,6 +123,10 @@
     margin: 40px 0
 }
 
+.blog-page-content {
+    white-space: break-spaces;
+}
+
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
     .blogs-list-container {
