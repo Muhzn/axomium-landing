@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/images/sidebar-logo.png';
+import logo from '../../assets/images/sidebar-logo.svg';
 import close from '../../assets/images/close-drawer.svg';
 import backgroundLogoMobile from '../../assets/images/axomium-white-logo-mobile.png';
 import { handleNavigation } from '../../common/utils';
