@@ -31,8 +31,8 @@ const Blog = () => {
                 <div className='blog-page-header'>{blogContent?.name?.S}</div>
                 <div className='blog-page-date'>{new Date(parseInt(blogContent?.timestamp?.N)).toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
                 <div className='blog-page-description'>{blogContent?.description?.S}</div>
-                <div className='blog-page-content'>
-                    {blogContent?.content?.S}
+                <div className='blog-page-content'
+                    dangerouslySetInnerHTML={{ __html: blogContent?.content?.S }}>
                 </div>
             </div>
             <Blogs />
