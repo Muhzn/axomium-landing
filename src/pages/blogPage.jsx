@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import './blogs.css';
 import coverImage from '../assets/images/blogs-cover.svg';
@@ -8,12 +9,14 @@ import Blogs from '../components/Body/blogs';
 import { getCall } from '../common/services';
 
 const Blog = () => {
+    const location = useLocation();
+
     const [blogContent, setBlogContent] = useState({});
     useEffect(() => {
         window.scrollTo(0, 0);
         const id = window.location.hash.substr(1);
         getBlogData(id);
-    }, []);
+    }, [location]);
 
     const getBlogData = async (id) => {
         const url = `blog/id?id=${id}`;

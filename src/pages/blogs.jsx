@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Chip from '@mui/material/Chip';
 import Pagination from '@mui/material/Pagination';
 import { getCall } from '../common/services';
@@ -166,7 +166,7 @@ const BlogsListPage = () => {
                         );
                     })}
                 </div>
-                <Pagination count={Math.round(blogsCount / blogsPerPage)} color='error'
+                <Pagination count={Math.ceil(blogsCount / blogsPerPage)} color='error'
                     shape="rounded" onChange={handlePageChange} />
             </div>
             <ContactUs />
